@@ -23,6 +23,8 @@
 
 - [確認しておくこと・準備しておくこと・覚えておくこと](./items/paper.md)
 
+- [家庭用72時間キット](./items/72hr-kit.md)
+
 - [伝言板テンプレート１](https://watanabe3tipapa.github.io/simple-message-board/)
 [REPO](https://github.com/watanabe3tipapa/simple-message-board)
 
@@ -40,4 +42,4 @@
 
 ---
 
-最終更新：2025-12-10 21:35
+最終更新：2025-12-10 21:55
