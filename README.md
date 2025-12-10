@@ -21,6 +21,8 @@
 
 ## その他（items/）
 
+- [確認しておくこと・準備しておくこと・覚えておくこと]（./items/paper.md）
+
 - [伝言板テンプレート１](https://watanabe3tipapa.github.io/simple-message-board/)
 [REPO](https://github.com/watanabe3tipapa/simple-message-board)
 
@@ -38,4 +40,4 @@
 
 ---
 
-最終更新：2025-12-10 20:55
+最終更新：2025-12-10 21:30
