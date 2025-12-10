@@ -1,0 +1,78 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon? files
+Icon?
+._*
+
+# Thumbnails
+._Thumbs.db
+
+# macOS Finder attributes
+.Spotlight-V100
+.Trashes
+
+# Temporary files
+*.swp
+*~
+*.tmp
+
+# Xcode (if applicable)
+build/
+DerivedData/
+*.xcworkspace
+!default.mode1v3
+!default.mode2v3
+!*.pbxproj
+*.moved-aside
+*.xcuserstate
+*.xcuserdata/
+
+# JetBrains IDEs
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# Node / JavaScript
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+env/
+venv/
+.venv/
+
+# Ruby
+*.gem
+.bundle/
+vendor/bundle
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+target/
+
+# Local environment files
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+
+# Backup files
+*.bak
+*.orig
+
+# R
+.Rhistory
