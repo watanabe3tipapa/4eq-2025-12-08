@@ -8,7 +8,7 @@
 - 簡易なHTMLファイルのみで構成
 - 常用デバイスのなかに保存しておくと良い
 
-[参照](https://github.com/your_username/your_repo/blob/main/docs/README.md)
+[参照](https://watanabe3tipapa.github.io/4eq-2025-12-08/)
 
 
 ---
@@ -37,4 +37,4 @@
 
 ---
 
-最終更新：2025-12-10 20:22
+最終更新：2025-12-10 20:45
