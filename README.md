@@ -25,7 +25,7 @@
 
 - [家庭用72時間キット](./items/72hr-kit.md)
 
-- [Yahoo! の主要防災サービス](./items/yahoo.md)
+- [Yahoo! の主要防災サービス](./items/yahoo.md) - アプリ未登録者むけ参考メモ
 
 - [伝言板テンプレート１](https://watanabe3tipapa.github.io/simple-message-board/)
 [REPO](https://github.com/watanabe3tipapa/simple-message-board)
@@ -44,4 +44,4 @@
 
 ---
 
-最終更新：2025-12-11 13:10
+最終更新：2025-12-11 13:15
