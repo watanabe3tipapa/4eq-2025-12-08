@@ -4,6 +4,13 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>地震発生時ダッシュボード</title>
+        <!-- PWA Manifest -->
+        <link rel="manifest" href="manifest.json">
+        <meta name="theme-color" content="#ff6b35">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="default">
+        <meta name="apple-mobile-web-app-title" content="地震Chk">
+        <link rel="apple-touch-icon" href="icon-192.png">
         <style>
             body,
             html {
@@ -32,7 +39,7 @@
                 box-sizing: border-box;
                 display: flex;
                 flex-direction: column;
-                overflow: hidden; /* iframeがはみ出さないように */
+                overflow: hidden;
             }
             .grid-item h2 {
                 margin-top: 0;
@@ -44,9 +51,22 @@
                 height: 100%;
                 border: none;
             }
+            .offline-notice {
+                background-color: #fff3cd;
+                color: #856404;
+                padding: 10px;
+                text-align: center;
+                display: none;
+            }
+            .offline-notice.show {
+                display: block;
+            }
         </style>
     </head>
     <body>
+        <div class="offline-notice" id="offlineNotice">
+            📴 オフライン mode - 一部機能が制限されます
+        </div>
         <div class="grid-container">
             <div class="grid-item" id="quadrant1">
                 <h2>地震情報</h2>
@@ -67,5 +87,29 @@
                 <iframe src="https://teiden-info.hepco.co.jp"></iframe>
             </div>
         </div>
+        
+        <script>
+            // Service Worker 登録
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('service-worker.js')
+                        .then(reg => console.log('SW registered:', reg.scope))
+                        .catch(err => console.log('SW registration failed:', err));
+                });
+            }
+            
+            // オフライン検出
+            function updateOnlineStatus() {
+                const notice = document.getElementById('offlineNotice');
+                if (!navigator.onLine) {
+                    notice.classList.add('show');
+                } else {
+                    notice.classList.remove('show');
+                }
+            }
+            window.addEventListener('online', updateOnlineStatus);
+            window.addEventListener('offline', updateOnlineStatus);
+            updateOnlineStatus();
+        </script>
     </body>
 </html>
