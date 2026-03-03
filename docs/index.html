@@ -12,13 +12,16 @@
         <meta name="apple-mobile-web-app-title" content="地震Chk">
         <link rel="apple-touch-icon" href="icon-192.png">
         <style>
+            * {
+                box-sizing: border-box;
+            }
             body,
             html {
                 margin: 0;
                 padding: 0;
                 width: 100%;
                 height: 100%;
-                font-family: sans-serif;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
                 background-color: #f0f0f0;
             }
             .grid-container {
@@ -29,27 +32,51 @@
                 height: 100vh;
                 gap: 10px;
                 padding: 10px;
-                box-sizing: border-box;
             }
             .grid-item {
                 background-color: #fff;
                 border: 1px solid #ccc;
-                border-radius: 8px;
+                border-radius: 12px;
                 padding: 20px;
-                box-sizing: border-box;
                 display: flex;
                 flex-direction: column;
-                overflow: hidden;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             }
             .grid-item h2 {
-                margin-top: 0;
-                border-bottom: 2px solid #eee;
-                padding-bottom: 10px;
+                margin: 0 0 20px 0;
+                color: #333;
+                font-size: 18px;
             }
-            iframe {
+            .link-button {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
                 width: 100%;
-                height: 100%;
-                border: none;
+                max-width: 200px;
+                padding: 15px 20px;
+                margin: 8px;
+                background-color: #007bff;
+                color: white;
+                text-decoration: none;
+                border-radius: 8px;
+                font-size: 14px;
+                font-weight: 500;
+                transition: background-color 0.2s, transform 0.1s;
+            }
+            .link-button:hover {
+                background-color: #0056b3;
+            }
+            .link-button:active {
+                transform: scale(0.98);
+            }
+            .link-button.secondary {
+                background-color: #28a745;
+            }
+            .link-button.secondary:hover {
+                background-color: #1e7e34;
             }
             .offline-notice {
                 background-color: #fff3cd;
@@ -61,30 +88,56 @@
             .offline-notice.show {
                 display: block;
             }
+            .info-text {
+                font-size: 12px;
+                color: #666;
+                margin-top: 15px;
+            }
+            @media (max-width: 600px) {
+                .grid-container {
+                    grid-template-columns: 1fr;
+                    grid-template-rows: repeat(4, 1fr);
+                }
+            }
         </style>
     </head>
     <body>
         <div class="offline-notice" id="offlineNotice">
-            📴 オフライン mode - 一部機能が制限されます
+            📴 オフライン mode - タップして開くリンクは使えません
         </div>
         <div class="grid-container">
             <div class="grid-item" id="quadrant1">
-                <h2>地震情報</h2>
-                <iframe
-                    src="https://earthquake.tenki.jp/bousai/earthquake/"
-                ></iframe>
+                <h2>�quake 地震情報</h2>
+                <a href="https://earthquake.tenki.jp/bousai/earthquake/" target="_blank" rel="noopener" class="link-button">
+                    地震情報を見る 🌐
+                </a>
+                <a href="https://www.jma.go.jp/jma/index.html" target="_blank" rel="noopener" class="link-button secondary">
+                    気象庁 ▶
+                </a>
+                <p class="info-text">タップすると新しいタブで開きます</p>
             </div>
             <div class="grid-item" id="quadrant2">
-                <h2>インターネット接続診断</h2>
-                <iframe src="icchecker.html"></iframe>
+                <h2>📡 インターネット診断</h2>
+                <a href="icchecker.html" target="_blank" rel="noopener" class="link-button">
+                    接続チェック ▶
+                </a>
+                <p class="info-text">オフラインでも動作します</p>
             </div>
             <div class="grid-item" id="quadrant3">
-                <h2>スマホの通信状態情報</h2>
-                <iframe src="iphone_checker.html"></iframe>
+                <h2>📱 スマホ通信状態</h2>
+                <a href="iphone_checker.html" target="_blank" rel="noopener" class="link-button">
+                    状態チェック ▶
+                </a>
+                <p class="info-text">オフラインでも動作します</p>
             </div>
             <div class="grid-item" id="quadrant4">
-                <h2>停電情報</h2>
-                <iframe src="https://teiden-info.hepco.co.jp"></iframe>
+                <h2>⚡ 停电情報</h2>
+                <a href="https://teiden-info.hepco.co.jp" target="_blank" rel="noopener" class="link-button">
+                    停电情報を見る 🌐
+                </a>
+                <a href="https://denkiyoho.tok-co.co.jp/" target="_blank" rel="noopener" class="link-button secondary">
+                    北海道電力 ▶
+                </a>
             </div>
         </div>
         
