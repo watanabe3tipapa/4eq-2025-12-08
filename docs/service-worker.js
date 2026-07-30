@@ -1,9 +1,13 @@
 // Service Worker for 地震チェッカー PWA
-const CACHE_NAME = 'eq-checker-v1';
+const CACHE_NAME = 'eq-checker-v2';
 const urlsToCache = [
   '/',
   '/index.html',
-  // 必要に応じて追加
+  '/icchecker.html',
+  '/iphone_checker.html',
+  '/manifest.json',
+  '/icon-192.png',
+  '/icon-512.png',
 ];
 
 // インストール時
